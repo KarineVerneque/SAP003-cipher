@@ -3,39 +3,48 @@ window.cipher = {
   decode: decode
 };
 
-function encode (number, msgCode) {
-  let result = "";
-  let letter = "";  
 
-  for (let i = 0; i < msgCode.length; i++) {
-     
-    if (msgCode.charCodeAt(i) >= 65 && msgCode.charCodeAt(i) <= 90) {
-      letter = (msgCode.charCodeAt(i) - 65 + number) % 26 + 65;
-      result += String.fromCharCode(letter);
-    } else if (msgCode.charCodeAt(i) >= 97 && msgCode.charCodeAt(i) <= 122) {
-      letter = (msgCode.charCodeAt(i) - 97 + number) % 26 + 97;
-      result += String.fromCharCode(letter); 
+function encode (offSet, writtenMsg) {
+  let letters = "";
+  let result = "";
+  
+  for (let i = 0; i < writtenMsg.length; i++) {
+    const asciiCode = writtenMsg.charCodeAt(i);
+    const isUpperCase = asciiCode >= 65 && writtenMsg.charCodeAt(i) <= 90
+    const isTinyCase = asciiCode >= 97 && writtenMsg.charCodeAt(i) <= 122
+
+    if (isUpperCase) {
+      letters = (asciiCode - 65 + offSet) % 26 + 65;
+      result += String.fromCharCode(letters);
+
+    } else if (isTinyCase) {
+      letters = (asciiCode - 97 + offSet) % 26 + 97;
+      result += String.fromCharCode(letters); 
     } else {
-      result += msgCode[i];      
+      result += writtenMsg[i];      
     }
   }
   return result;
 }
 
-function decode (number, msgCode) {
-  let result = "";
-  let letter = "";
-  
-  for (let i = 0; i < msgCode.length; i++) {
 
-    if (msgCode.charCodeAt(i) >= 65 && msgCode.charCodeAt(i) <= 90) {
-      letter = (msgCode.charCodeAt(i) + 65 - number) % 26 + 65;
-      result += String.fromCharCode(letter);
-    } else if (msgCode.charCodeAt(i) >= 97 && msgCode.charCodeAt(i) <= 122) {
-      letter = (msgCode.charCodeAt(i) -122 - number ) % 26 + 122;
-      result += String.fromCharCode(letter); 
+function decode (offSet, writtenMsg) {
+  let letters = "";
+  let result = "";
+  
+  for (let i = 0; i < writtenMsg.length; i++) {
+    const asciiCode = writtenMsg.charCodeAt(i);
+    const isUpperCase = asciiCode >= 65 && writtenMsg.charCodeAt(i) <= 90
+    const isTinyCase = asciiCode >= 97 && writtenMsg.charCodeAt(i) <= 122
+
+    if (isUpperCase) {
+      letters = (asciiCode + 65 - offSet) % 26 + 65;
+      result += String.fromCharCode(letters);
+    } else if (isTinyCase) {
+      letters = (asciiCode -122 - offSet ) % 26 + 122;
+      result += String.fromCharCode(letters); 
     } else {
-      result += msgCode[i];      
+      result += writtenMsg[i];      
     }
   }
   return result;

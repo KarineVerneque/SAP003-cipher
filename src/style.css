@@ -1,5 +1,5 @@
 /***** Formatação de Tags *****/
-body{
+body {
     background-image: url(../img/img2.jpeg);
     background-color: #10314C;
     background-attachment: fixed;
@@ -12,7 +12,7 @@ body{
     height: 400px;
 }
 
-input{
+input {
     background-color:transparent;
     border: none;
     color: #E6E6E6;
@@ -31,7 +31,7 @@ textarea:focus, input:focus, select:focus {
     border-bottom: 1.5px solid #C1B668;
 }
 
-button{
+button {
     margin: 10px;
     padding: 10px 15px;
     color: #10314C;
@@ -49,15 +49,15 @@ button:focus {
     background: #C1B668;
 }
 
-img{
+img {
     width: 200px;
 }
 
-h3{
+h3 {
     font-weight: normal;    
 }
 
-a{
+a {
     color: #10314C;
     text-decoration: none;
 }
@@ -67,15 +67,12 @@ a:hover {
     padding: 5px;
 }
 
-p{
+p {
     font-size: 1.2em;
 }
 
-
-
 /***** Formatação de Div e Class *****/
-
-#cifraPrincipal{
+#cifraPrincipal {
     box-align: center;
     width: 350px;
     height: 540px;
@@ -85,10 +82,9 @@ p{
     margin-top: 50px;
 }
 
-#msg{
+#msg {
     margin-top: 40px;
 }
-
 
 .footer {
     position:absolute;
@@ -101,9 +97,6 @@ p{
     padding: 5px;
 }
 
-
-
-#cipher{
+#cipher {
     margin-top: 40px;
 }
-
