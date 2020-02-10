@@ -3,9 +3,8 @@ body {
     background-image: url(../img/img2.jpeg);
     background-color: #10314C;
     background-attachment: fixed;
-    background-size: 100% 120%;
+    background-size: 99.8% 120%;
     background-repeat: no-repeat;
-    /*background-size: cover;*/
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #FAFAFA;
     width: auto;
@@ -61,6 +60,7 @@ a {
     color: #10314C;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration:underline;
     background: #C1B668;
@@ -87,7 +87,7 @@ p {
 }
 
 .footer {
-    position:absolute;
+    position:fixed;
     bottom:0;
     left: 0;
     width:100%;
